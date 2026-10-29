@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BIDV Staff</title>
+  <meta name="description" content="Danh bạ nhân viên BIDV">
+  <meta name="theme-color" content="#0B5B4B">
+
+  <!-- Add to home screen -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="BIDV Staff">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Install banner: Android/desktop use the native prompt, iOS gets instructions -->
+  <div id="install-banner" class="install-banner" hidden>
+    <div class="install-text">
+      <strong>Cài BIDV Staff</strong>
+      <span id="install-hint">Thêm ứng dụng vào màn hình chính để mở nhanh hơn.</span>
+    </div>
+    <button id="install-btn" class="btn-small">Cài đặt</button>
+    <button id="install-close" class="icon-btn" aria-label="Đóng">&#x2715;</button>
+  </div>
+
+  <!-- QR bottom sheet -->
+  <div id="sheet-backdrop" class="sheet-backdrop" hidden></div>
+  <section id="qr-sheet" class="sheet" aria-hidden="true" role="dialog" aria-label="QR code"></section>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="vendor/qrcode.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
