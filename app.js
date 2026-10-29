@@ -24,38 +24,13 @@
     badge: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.5-1.5 1.7-2 3-2s2.5.5 3 2M14 10h4M14 14h3"/></svg>',
   };
 
-  // Point on a circle around (50,50), used to lay out the BIDV marks
-  const pt = (r, deg) => {
-    const a = (deg * Math.PI) / 180;
-    return [(50 + r * Math.cos(a)).toFixed(2), (50 + r * Math.sin(a)).toFixed(2)];
-  };
+  // BIDV hoa mai (apricot blossom) mark: gold on transparent, so the star shows the background
+  const HOA_MAI = '<img class="hoamai" src="icons/hoamai.png" alt="" aria-hidden="true">';
 
-  // Round BIDV emblem: dark green disc, five gold petals, green star in the middle
-  const EMBLEM_SVG = (() => {
-    const petals = [90, 162, 234, 306, 18].map((a) => {
-      const [x, y] = pt(17, a);
-      return `<circle cx="${x}" cy="${y}" r="14"/>`;
-    });
-    const star = Array.from({ length: 10 }, (_, i) => pt(i % 2 ? 9.5 : 22, -90 + i * 36).join(",")).join(" ");
-    return (
-      '<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#0B4A3C"/>' +
-      `<g fill="#F2B33D" stroke="#0B4A3C" stroke-width="2">${petals.join("")}</g><polygon points="${star}" fill="#0B4A3C"/></svg>`
-    );
-  })();
-
-  // Gold ring of petals next to the "BIDV" wordmark
-  const RING_SVG = (() => {
-    const dots = [270, 342, 54, 126, 198].map((a) => {
-      const [x, y] = pt(30, a);
-      return `<circle cx="${x}" cy="${y}" r="16"/>`;
-    });
-    return `<svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><g fill="#F2B33D">${dots.join("")}</g></svg>`;
-  })();
-
-  const logo = () => `<span class="logo">BIDV${RING_SVG}</span>`;
+  const logo = () => `<span class="logo">BIDV${HOA_MAI}</span>`;
 
   const avatar = (e, size) => {
-    const emblem = `<span class="emblem">${EMBLEM_SVG}</span>`;
+    const emblem = `<span class="emblem">${HOA_MAI}</span>`;
     const inner = e.photo
       ? `<img src="${esc(e.photo)}" alt="${esc(e.fullName)}" onerror="this.outerHTML='${emblem.replace(/"/g, "&quot;")}'">`
       : emblem;

@@ -1,6 +1,6 @@
 // Cache-first for the app shell so the installed app opens offline.
 // Bump VERSION whenever files change so clients pick up the new build.
-const VERSION = "bidv-staff-v9";
+const VERSION = "bidv-staff-v10";
 const SHELL = [
   "./",
   "index.html",
@@ -12,6 +12,7 @@ const SHELL = [
   "icons/icon-192.png",
   "icons/icon-512.png",
   "icons/apple-touch-icon.png",
+  "icons/hoamai.png",
 ];
 
 self.addEventListener("install", (event) => {

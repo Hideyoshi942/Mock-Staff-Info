@@ -97,7 +97,7 @@ button { font: inherit; cursor: pointer; }
   letter-spacing: -.5px;
   line-height: 1;
 }
-.logo .ring { width: .72em; height: .72em; margin: -.08em 0 0 3px; }
+.logo .hoamai { width: .8em; height: .8em; margin: -.12em 0 0 3px; }
 
 .avatar {
   display: grid;
@@ -106,14 +106,14 @@ button { font: inherit; cursor: pointer; }
   background: var(--ring);
   flex-shrink: 0;
 }
-.avatar .emblem, .avatar img {
+.avatar .emblem, .avatar > img {
   width: 78%;
   height: 78%;
   border-radius: 50%;
 }
-.avatar img { object-fit: cover; }
-.emblem { display: block; }
-.emblem svg { display: block; width: 100%; height: 100%; }
+.avatar > img { object-fit: cover; }
+.emblem { display: grid; place-items: center; background: #0b4a3c; }
+.emblem .hoamai { width: 64%; height: 64%; }
 
 .job-title { color: var(--teal); font-size: 13px; font-weight: 600; }
 
