@@ -1,6 +1,6 @@
 // Cache-first for the app shell so the installed app opens offline.
 // Bump VERSION whenever files change so clients pick up the new build.
-const VERSION = "bidv-staff-v10";
+const VERSION = "bidv-staff-v15";
 const SHELL = [
   "./",
   "index.html",
